@@ -14,7 +14,7 @@ Time spent: 8 hours spent in total
 The following **required** functionality is completed:
 
 * [X] User can **view a list of todo items**
-* [X] User can **successfully add and remove items** from the todo list //(reworking remove)
+* [X] User can **successfully add and remove items** from the todo list
 * [X] User's **list of items persisted** upon modification and and retrieved properly on app restart
 
 The following **optional** features are implemented:
@@ -37,7 +37,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 Describe any challenges encountered while building the app.
 
-I have never used Android Studio before building this app, so I had struggled with finding ways to fix errors and use the tools required to run the app, from the simulator and other features that I needed to use to complete this project.
+I have never used Android Studio before building this app, so I had struggled with finding ways to fix errors and use the tools required to run the app, from the simulator and other features that I needed to use to complete this project. To overcome this, I tried spending (at most) 30 minutes to fix the problem myself as suggested my tech fellows until I had to reach out to them or another tech fellow to get my problems solved.
 
 ## License
 
