@@ -3,6 +3,7 @@ package com.example.simpletodo;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,7 @@ import java.util.List;
 
 public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> {
 
-    public interface OnClickListener {
+   public interface onClickListener {
 
         void onItemClicked(int position);
 
@@ -28,9 +29,9 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
 
     onLongClickListener longClickListener;
 
-    OnClickListener clickListener;
+    onClickListener clickListener;
 
-    public ItemsAdapter(List<String> items, onLongClickListener longClickListener, OnClickListener clickListener) {
+    public ItemsAdapter(List<String> items, onLongClickListener longClickListener, onClickListener clickListener) {
 
         this.items = items;
 
@@ -42,7 +43,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
 
     //default constructor for ItemsAdapter class
 
-    public ItemsAdapter(List<String> items) {
+    public ItemsAdapter(List<String> items, onLongClickListener onLongClickListener) {
 
         this.items = items;
 
@@ -76,7 +77,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
 
     }
 
-    //tells RV list lengths
+    //tells RV the list lengths
     @Override
     public int getItemCount() {
 
@@ -105,6 +106,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
         public void bind(String item) {
 
             tvItem.setText(item);
+
             tvItem.setOnClickListener(new View.OnClickListener() {
 
                 public void onClick(View v) {
@@ -113,6 +115,10 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
 
                 }
 
+            });
+
+            tvItem.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
                 public boolean onLongClick(View v) {
 
                     //let listener know which position was long clicked
@@ -122,7 +128,6 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
                     return true;
                 }
             });
-
         }
 
     }

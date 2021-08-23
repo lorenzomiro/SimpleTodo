@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 import org.apache.commons.io.FileUtils;
@@ -60,8 +59,6 @@ public class MainActivity extends AppCompatActivity {
 
         rvItems = findViewById(R.id.rvItems);
 
-        //etItem.setText("I'm doing this from Java!");
-
         //load in items
 
         loadItems();
@@ -70,11 +67,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemLongClicked(int position) {
 
+                //test for long click
+
+                Log.d("MainActivity","Long click at position " + position);
+
                 //delete item from model
 
                 items.remove(position);
 
-                //notify adapter
+                //notify adapter of removed position
 
                 itemsAdapter.notifyItemRemoved(position);
 
@@ -86,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
         };
 
-        ItemsAdapter.OnClickListener onClickListener = new ItemsAdapter.OnClickListener() {
+        ItemsAdapter.onClickListener onClickListener = new ItemsAdapter.onClickListener() {
             @Override
             public void onItemClicked(int position) {
                 //open up edit activity
@@ -149,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
 
+        super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK && requestCode == EDIT_TEXT_CODE) {
 
             //get updated text value
@@ -171,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
 
             saveItems();
 
-            Toast.makeText(getApplicationContext(), "Nice! Item updated successfully!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Nice! Item updated successfully!", Toast.LENGTH_SHORT).show();
 
         } else {
 
