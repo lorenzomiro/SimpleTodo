@@ -29,7 +29,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' /> //still need
+<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' /> ![SimpleToDo App Demo](https://user-images.githubusercontent.com/46176613/130685469-9e674323-025d-4cce-8dcb-f4b2ab0f42e4.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
